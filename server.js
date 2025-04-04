@@ -37,7 +37,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ message: "No file uploaded" });
     }
-    const fileUrl = `https://chat-backend.onrender.com/uploads/${req.file.filename}`; // Change to your actual backend URL
+    const fileUrl = `https://https://chatback-sif1.onrender.com/uploads/${req.file.filename}`; // Change to your actual backend URL
     res.json({ url: fileUrl });
 });
 
