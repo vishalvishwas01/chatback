@@ -37,8 +37,10 @@ app.post("/upload", upload.single("file"), (req, res) => {
     if (!req.file) {
         return res.status(400).json({ message: "No file uploaded" });
     }
-    res.json({ url: `/uploads/${req.file.filename}` });
+    const fileUrl = `https://chat-backend.onrender.com/uploads/${req.file.filename}`; // Change to your actual backend URL
+    res.json({ url: fileUrl });
 });
+
 
 io.on("connection", (socket) => {
     console.log("User connected:", socket.id);
